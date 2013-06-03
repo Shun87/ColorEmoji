@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  FontDesigner
+
+  Created by chenshun on 13-5-6.
+  Copyright (c) 2013年 ChenShun. All rights reserved.
+*/
+"Families" = "字體家族";
+"Custom Font" = "自定義";
+"ColorEmoji" = "錶情符號";
+"Styles" = "樣式";
+"Font Preview" = "字體預覽";
+"Settings" = "設置";
+"Feedback" = "反饋";
+"About" = "關于";
+"Invite By Email" = "郵件邀請";
+"Invite By SMS" = "短信邀請";
+"Send feekback" = "發送反饋";
+"Version" = "版本號";
+"GroupSMSCondition" = "群发短信需要再“设置”应用程序中关闭iMessage、群发讯息和彩信。";
+"Cancel" = "取消";
+"invite" = "'錶情符號'是個非常棒的軟件，相信妳會喜歡，快去app store下載吧！itms://itunes.apple.com/us/app/color-emoji-unicode-symbol-character-text/id657401562?mt=8";
+"No mail account" = "尚未配置郵箱帳戶，您可再“設置”中添加或創建郵箱帳戶";
+"group member" = "分組成員";
+"ok" = "確定";
+"Remove ads" = "移除廣告";
+"Restore" = "恢複";
+"pro" = "個性字體設計 專業版";
+"learn more" = "了解更多";
+"FontDesigner" = "個性字體設計 專業版";
+"Rate us" ="評論我們";
+"View more" = "查看更多";
+"Symbols" = "符號";
+"More Apps" = "更多應用";
+"Emoj" = "表情";
+"Copied" = "已拷貝";
+"group" = "分組";

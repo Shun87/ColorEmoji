@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Typography</key>
+	<dict>
+		<key>00A7</key>
+		<string>section</string>
+		<key>00B6</key>
+		<string>paragraph</string>
+		<key>00B7</key>
+		<string>interpunct</string>
+		<key>00BC</key>
+		<string>one-quarter</string>
+		<key>00BD</key>
+		<string>one-half</string>
+		<key>00BE</key>
+		<string>three-quarters</string>
+		<key>2012</key>
+		<string>figure dash</string>
+		<key>2013</key>
+		<string>en dash</string>
+		<key>2014</key>
+		<string>em dash</string>
+		<key>2015</key>
+		<string>quotation dash</string>
+		<key>2018</key>
+		<string>left single quote</string>
+		<key>2019</key>
+		<string>right single quote</string>
+		<key>201C</key>
+		<string>left double quote</string>
+		<key>201D</key>
+		<string>right double quote</string>
+		<key>2020</key>
+		<string>dagger</string>
+		<key>2021</key>
+		<string>double dagger</string>
+		<key>2022</key>
+		<string>bullet</string>
+		<key>203D</key>
+		<string>interrobang</string>
+		<key>2042</key>
+		<string>asterism</string>
+		<key>2153</key>
+		<string>one-third</string>
+		<key>2155</key>
+		<string>one-fifth</string>
+		<key>2159</key>
+		<string>one-sixth</string>
+		<key>215B</key>
+		<string>one-eighth</string>
+		<key>2190</key>
+		<string>left arrow</string>
+		<key>2191</key>
+		<string>up arrow</string>
+		<key>2192</key>
+		<string>right arrow</string>
+		<key>2193</key>
+		<string>down arrow</string>
+		<key>21A9</key>
+		<string>carriage return symbol</string>
+		<key>2423</key>
+		<string>space symbol</string>
+		<key>2605</key>
+		<string>starf, bigstar</string>
+		<key>269C</key>
+		<string>fleur-de-lys</string>
+		<key>2713</key>
+		<string>check mark</string>
+		<key>2717</key>
+		<string>cross mark</string>
+		<key>3003</key>
+		<string>ditto</string>
+	</dict>
+	<key>Unary operators </key>
+	<dict>
+		<key>221A</key>
+		<string>radic, Sqrt, radical, square root</string>
+		<key>221B</key>
+		<string>cube root</string>
+		<key>221C</key>
+		<string>fourth root</string>
+		<key>00B1 </key>
+		<string>plus or minus</string>
+		<key>2213</key>
+		<string>minus or plus</string>
+		<key>2032 </key>
+		<string>prime, derivative</string>
+		<key>2033</key>
+		<string>Prime, double prime</string>
+		<key>2034</key>
+		<string>tprime, triple prime</string>
+		<key>220F</key>
+		<string>N-ary product</string>
+		<key>2211</key>
+		<string>N-ary summation</string>
+	</dict>
+	<key>Binary operators</key>
+	<dict>
+		<key>2212 </key>
+		<string>minus</string>
+		<key>00D7</key>
+		<string>multiplication sign</string>
+		<key>22C5</key>
+		<string>sdot</string>
+		<key>2215</key>
+		<string>division slash</string>
+		<key>00f7</key>
+		<string>division sign</string>
+	</dict>
+	<key>Relationships</key>
+	<dict>
+		<key>221D</key>
+		<string>prop, propto, Proportional, vprop, varpropto, proportional to</string>
+		<key>226A </key>
+		<string>much less than</string>
+		<key>226B</key>
+		<string>much greater than</string>
+		<key>225C</key>
+		<string>trie, triangleq, delta equal to</string>
+		<key>225D</key>
+		<string>equal to by definition</string>
+		<key>225F</key>
+		<string>equest, questioned equal to</string>
+		<key>2260</key>
+		<string>ne, NotEqual, not equal to</string>
+		<key>2261</key>
+		<string>equiv, Congruent, equivalent to</string>
+		<key>2243 </key>
+		<string>asymptotically equal to</string>
+		<key>2244</key>
+		<string>not asymptotically equal to</string>
+		<key>2245 </key>
+		<string>approximately equal to</string>
+		<key>2246</key>
+		<string>approximately but not actually equal to</string>
+		<key>2247</key>
+		<string>neither approximately nor actually equal to</string>
+		<key>2248</key>
+		<string>almost equal to
+</string>
+		<key>2249</key>
+		<string>not almost equal to</string>
+		<key>2223</key>
+		<string>divides</string>
+		<key>2224</key>
+		<string>does not divide</string>
+	</dict>
+	<key>Calculus, Vector Calculus</key>
+	<dict>
+		<key>221E</key>
+		<string>infinity</string>
+		<key>2202</key>
+		<string>partial differential</string>
+		<key>222B</key>
+		<string>integral</string>
+		<key>222C</key>
+		<string>double integral</string>
+		<key>222D</key>
+		<string> triple integral</string>
+		<key>222E</key>
+		<string>contour integral</string>
+		<key>222F</key>
+		<string>surface integral</string>
+		<key>2230</key>
+		<string>volume integral</string>
+		<key>2231</key>
+		<string>clockwise integral</string>
+		<key>2232</key>
+		<string>clockwise contour integral</string>
+		<key>2233</key>
+		<string>anticlockwise contour integral</string>
+		<key>2207</key>
+		<string>nabla, Del, backward difference, gradient</string>
+	</dict>
+	<key>Sets</key>
+	<dict>
+		<key>2282</key>
+		<string>subset, included in, proper subset</string>
+		<key>2283</key>
+		<string>superset, includes, proper superset</string>
+		<key>2229</key>
+		<string>intersection</string>
+		<key>222A</key>
+		<string>union</string>
+		<key>2208</key>
+		<string>isin, isinv, Element, in, element of (large symbol)
+</string>
+		<key>220A</key>
+		<string>element of (small symbol)</string>
+		<key>2209</key>
+		<string>notin, NotElement, notinva, not element of</string>
+		<key>220B</key>
+		<string>niv, ReverseElement, ni, SuchThat, contains as member (large symbol)</string>
+		<key>220D</key>
+		<string>contains as member (small symbol)</string>
+		<key>220C</key>
+		<string>notni, notniva, NotReverseElement, does not contain as member</string>
+		<key>2205</key>
+		<string>empty, emptyset, emptyv, varnothing, empty set</string>
+	</dict>
+	<key>Mathematical typography </key>
+	<dict>
+		<key>22EE</key>
+		<string>vellip, vertical ellipsis</string>
+		<key>22EF</key>
+		<string>hellip, horizontal ellipsis</string>
+		<key>22F0</key>
+		<string>utdot, rising dots, up right diagonal ellipsis</string>
+		<key>22F1</key>
+		<string>dtdot, falling dots, down right diagonal ellipsis</string>
+	</dict>
+	<key>Logic</key>
+	<dict>
+		<key>2227</key>
+		<string>Logical AND</string>
+		<key>2228</key>
+		<string>Logical OR</string>
+		<key>220E</key>
+		<string>END OF PROOF</string>
+		<key>2234</key>
+		<string>THEREFORE , there4, therefore, Therefore</string>
+		<key>2235</key>
+		<string>BECAUSE , becaus, because, Because</string>
+		<key>2200</key>
+		<string>FOR ALL , forall, ForAll</string>
+		<key>2203</key>
+		<string>THERE EXISTS , exist, Exists</string>
+		<key>2204</key>
+		<string>THERE DOES NOT EXIST , nexist, NotExists, nexists</string>
+	</dict>
+	<key>Geometry</key>
+	<dict>
+		<key>2220</key>
+		<string>ang, angle</string>
+		<key>2221</key>
+		<string>angmsd, measured angle</string>
+		<key>2222</key>
+		<string>spherical angle</string>
+	</dict>
+	<key>Other</key>
+	<dict>
+		<key>2113</key>
+		<string>Small script letter L, litre.</string>
+	</dict>
+	<key>Science</key>
+	<dict>
+		<key>00B0</key>
+		<string>degree</string>
+		<key>2032</key>
+		<string>prime</string>
+		<key>2033</key>
+		<string>double prime</string>
+		<key>00B5</key>
+		<string>micro, mu</string>
+		<key>2601</key>
+		<string>cloud</string>
+		<key>2607</key>
+		<string>lightning</string>
+		<key>2602</key>
+		<string>umbrella</string>
+		<key>2614</key>
+		<string>umbrella with rain drops</string>
+		<key>2608</key>
+		<string>thunderstorm</string>
+		<key>2609</key>
+		<string>sun</string>
+		<key>263C</key>
+		<string>white sun with rays
+</string>
+		<key>2600</key>
+		<string>black sun with rays</string>
+		<key>263D</key>
+		<string>first quarter moon</string>
+		<key>263E</key>
+		<string>last quarter moon</string>
+		<key>263F</key>
+		<string>Mercury</string>
+		<key>2640</key>
+		<string>female sign, Venus</string>
+		<key>2641</key>
+		<string>Earth</string>
+		<key>2642</key>
+		<string>male sign, Mars</string>
+		<key>2643</key>
+		<string>Jupiter</string>
+		<key>2644</key>
+		<string>Saturn</string>
+		<key>2646</key>
+		<string>Neptune</string>
+		<key>2647</key>
+		<string>Pluto</string>
+		<key>2648</key>
+		<string>constellation Aries</string>
+		<key>2653</key>
+		<string>constellation Pisces</string>
+		<key>26C4</key>
+		<string>snowman without snow (light snow)</string>
+		<key>26C5</key>
+		<string>sun behind cloud (partly cloudy)</string>
+		<key>1F300</key>
+		<string>cyclone, typhoon</string>
+		<key>1F301</key>
+		<string>foggy</string>
+		<key>1F302</key>
+		<string>closed umbrella</string>
+		<key>1F30C</key>
+		<string>Milky Way</string>
+		<key>1F311</key>
+		<string>new moon</string>
+		<key>1F313</key>
+		<string>first quarter moon</string>
+		<key>1F315</key>
+		<string>full moon</string>
+		<key>1F317</key>
+		<string>last quarter moon</string>
+		<key>1F319</key>
+		<string>crescent moon</string>
+		<key>1F320</key>
+		<string>shooting star</string>
+	</dict>
+	<key>Engineering</key>
+	<dict>
+		<key>232D</key>
+		<string>cylindricity (drafting)</string>
+		<key>2126</key>
+		<string>omega, ohm</string>
+		<key>2104</key>
+		<string>Centerline symbol</string>
+		<key>FE4A</key>
+		<string>overline dashes</string>
+		<key>FE4E</key>
+		<string>underline dashes</string>
+	</dict>
+	<key>Currency</key>
+	<dict>
+		<key>20AC</key>
+		<string>Euro</string>
+		<key>00A3</key>
+		<string>Sterling</string>
+		<key>20A4</key>
+		<string>Lira</string>
+		<key>20B9</key>
+		<string>Indian Rupee</string>
+		<key>00A5</key>
+		<string>Yen</string>
+		<key>00A2</key>
+		<string>Cent</string>
+		<key>20AA</key>
+		<string>New Shekel</string>
+		<key>20A9</key>
+		<string>Won</string>
+		<key>0E3F</key>
+		<string>Baht</string>
+		<key>20B4</key>
+		<string>Hryvnia</string>
+		<key>2031</key>
+		<string> Basis point, per ten thousand, permyriad</string>
+		<key>2030</key>
+		<string>Per mille</string>
+		<key>1F4B0</key>
+		<string>money bag</string>
+		<key>1F4B1</key>
+		<string>currency exchange</string>
+		<key>1F4B3</key>
+		<string>credit card</string>
+		<key>1F4C8</key>
+		<string>chart with upward trend</string>
+		<key>1F4C9</key>
+		<string>chart with downward trend</string>
+	</dict>
+	<key>Music</key>
+	<dict>
+		<key>2669</key>
+		<string>quarter note</string>
+		<key>266A</key>
+		<string>eighth note</string>
+		<key>266B</key>
+		<string>beamed eighth notes</string>
+		<key>266C</key>
+		<string>beamed sixteenth notes</string>
+		<key>266D</key>
+		<string>music flat sign</string>
+		<key>266E</key>
+		<string>music natural sign</string>
+		<key>266F</key>
+		<string>music sharp sign</string>
+		<key>1F3B5</key>
+		<string>musical note</string>
+		<key>1F3B8</key>
+		<string>guitar</string>
+		<key>1F3BB</key>
+		<string>violin</string>
+	</dict>
+	<key>Health and safety </key>
+	<dict>
+		<key>2620</key>
+		<string>skull and crossbones</string>
+		<key>2621</key>
+		<string>caution sign (curves ahead on road)</string>
+		<key>2622</key>
+		<string>radioactive sign (trefoil)</string>
+		<key>2623</key>
+		<string>biohazard sign</string>
+		<key>2624</key>
+		<string>caduceus</string>
+		<key>262E</key>
+		<string>peace symbol</string>
+		<key>262F</key>
+		<string>yin yang</string>
+		<key>267F</key>
+		<string>wheelchair symbol</string>
+		<key>2695</key>
+		<string>staff of Asclepius</string>
+		<key>26A0</key>
+		<string>warning sign</string>
+		<key>26A1</key>
+		<string>high voltage sign</string>
+		<key>1F489</key>
+		<string>syringe</string>
+	</dict>
+	<key>Chess</key>
+	<dict>
+		<key>2654</key>
+		<string>white chess king</string>
+		<key>2655</key>
+		<string>white chess queen</string>
+		<key>265D</key>
+		<string>black chess bishop</string>
+		<key>265F</key>
+		<string>black chess pawn</string>
+	</dict>
+	<key>Sports, games</key>
+	<dict>
+		<key>26BD</key>
+		<string>soccer</string>
+		<key>26BE</key>
+		<string>baseball</string>
+		<key>1F3AE</key>
+		<string>video game</string>
+		<key>1F3B3</key>
+		<string>bowling</string>
+		<key>1F3BD</key>
+		<string>running shirt and sash</string>
+		<key>1F3C0</key>
+		<string>basketball</string>
+		<key>1F3C3</key>
+		<string>runner</string>
+		<key>1F3C6</key>
+		<string>trophy</string>
+		<key>1F3C9</key>
+		<string>rugby</string>
+	</dict>
+	<key>Control Pictures Block </key>
+	<dict>
+		<key>2400</key>
+		<string>symbol for null</string>
+		<key>2406</key>
+		<string>symbol for acknowledge</string>
+		<key>2408</key>
+		<string>symbol for backspace</string>
+		<key>2409</key>
+		<string>symbol for horizontal tabulation</string>
+		<key>240A</key>
+		<string>symbol for line feed</string>
+		<key>240D</key>
+		<string>symbol for carriage return</string>
+	</dict>
+	<key>Geometric Shapes </key>
+	<dict>
+		<key>25B3</key>
+		<string>equilateral triangle</string>
+		<key>22BF</key>
+		<string>right triangle</string>
+		<key>2B1C</key>
+		<string>square</string>
+		<key>2662</key>
+		<string>rhombus, diamond</string>
+		<key>25AD</key>
+		<string>rectangle</string>
+		<key>25CB</key>
+		<string>circle</string>
+	</dict>
+	<key>Food and drink </key>
+	<dict>
+		<key>2615</key>
+		<string>hot beverage</string>
+		<key>1F345</key>
+		<string>tomato</string>
+		<key>1F34A</key>
+		<string>tangerine</string>
+		<key>1F34F</key>
+		<string>green apple</string>
+		<key>1F354</key>
+		<string>hamburger</string>
+		<key>1F359</key>
+		<string>rice ball</string>
+		<key>1F35E</key>
+		<string>bread</string>
+		<key>1F363</key>
+		<string>sushi</string>
+		<key>1F368</key>
+		<string>ice cream</string>
+		<key>1F36D</key>
+		<string>lollipop</string>
+		<key>1F372</key>
+		<string>pot of food</string>
+		<key>1F377</key>
+		<string>wine glass</string>
+		<key>1F37C</key>
+		<string>baby bottle</string>
+	</dict>
+</dict>
+</plist>

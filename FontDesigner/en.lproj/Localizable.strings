@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  FontDesigner
+
+  Created by chenshun on 13-5-6.
+  Copyright (c) 2013年 ChenShun. All rights reserved.
+*/
+"Families" = "Families";
+"Custom Font" = "Custom Font";
+"ColorEmoji" = "Color Emoji";
+"Styles" = "Styles";
+"Font Preview" = "Font Preview";
+"Settings" = "Settings";
+"Feedback" = "Feedback";
+"About" = "About";
+"Invite By Email" = "Invite By Email";
+"Invite By SMS" = "Invite By SMS";
+"Send feekback" = "Send feekback";
+"Version" = "Version";
+"GroupSMSCondition" = "Group SMS requires to disable iMessage, Goup Message & MMS in \"Setting\" App.";
+"Cancel" = "Cancel";
+"invite" = "Hello,'Color Emoji'is a great app and easy to use,check out it on the App Store,I think you'll like it! itms://itunes.apple.com/us/app/color-emoji-unicode-symbol-character-text/id657401562?mt=8";
+"No mail account" = "There are no mail accouts configured, You can add or creat a mail account in Settings";
+"group member" = "Members";
+"ok" = "OK";
+"Remove ads" = "Remove ads";
+"Restore" = "Restore";
+"pro" = "Font Designer Pro";
+"learn more" = "learn more";
+"FontDesigner" = "Font Design Pro";
+"Rate us" ="Rate us";
+"View more" = "View More";
+"More Apps" = "More Apps";
+"Symbols" = "Symbols";
+"Emoj" = "Emoji";
+"Copied" = "Copied";
+"group" = "Group";

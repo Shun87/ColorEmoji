@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  FontDesigner
+
+  Created by chenshun on 13-5-6.
+  Copyright (c) 2013年 ChenShun. All rights reserved.
+*/
+"Families" = "字体家族";
+"Custom Font" = "自定义";
+"ColorEmoji" = "表情符号";
+"Styles" = "样式";
+"Font Preview" = "字体预览";
+"Settings" = "设置";
+"Feedback" = "反馈";
+"About" = "关于";
+"Invite By Email" = "邮件邀请";
+"Invite By SMS" = "短信邀请";
+"Send feekback" = "发送反馈";
+"Version" = "版本号";
+"GroupSMSCondition" = "群发短信需要再“设置”应用程序中关闭iMessage、群发讯息和彩信。";
+"Cancel" = "取消";
+"invite" = "'表情符号'是个非常棒的软件，相信你会喜欢，快去app store下载吧！itms://itunes.apple.com/us/app/color-emoji-unicode-symbol-character-text/id657401562?mt=8";
+"No mail account" = "尚未配置邮箱帐户，您可再“设置”中添加或创建邮箱帐户";
+"group member" = "分组成员";
+"ok" = "确定";
+"Remove ads" = "移除广告";
+"Restore" = "恢复";
+"pro" = "个性字体设计 专业版";
+"learn more" = "了解更多";
+"FontDesigner" = "个性字体设计 专业版";
+"Rate us" ="评论我们";
+"View more" = "查看更多";
+"Symbols" = "符号";
+"More Apps" = "更多应用";
+"Emoj" = "表情";
+"Copied" = "已拷贝";
+"group" = "分組";

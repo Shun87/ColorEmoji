@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Basic Latin</key>
+	<dict>
+		<key>from</key>
+		<string>U+0021</string>
+		<key>to</key>
+		<string>U+007f</string>
+	</dict>
+	<key>Latin-1 Supplement</key>
+	<dict>
+		<key>from</key>
+		<string>U+00a1</string>
+		<key>to</key>
+		<string>U+00ff</string>
+	</dict>
+	<key>Latin Extebded-A</key>
+	<dict>
+		<key>from</key>
+		<string>U+0100</string>
+		<key>to</key>
+		<string>U+017f</string>
+	</dict>
+	<key>Latin Extebded-B</key>
+	<dict>
+		<key>from</key>
+		<string>U+0180</string>
+		<key>to</key>
+		<string>U+024f</string>
+	</dict>
+	<key>IPA Extended-B</key>
+	<dict>
+		<key>from</key>
+		<string>U+0250</string>
+		<key>to</key>
+		<string>U+02af</string>
+	</dict>
+	<key>Spacing Modifier Letters</key>
+	<dict>
+		<key>from</key>
+		<string>U+02b0</string>
+		<key>to</key>
+		<string>U+02ff</string>
+	</dict>
+	<key>Greek and Coptic</key>
+	<dict>
+		<key>from</key>
+		<string>U+0374</string>
+		<key>to</key>
+		<string>U+03ff</string>
+	</dict>
+	<key>Cyrillic </key>
+	<dict>
+		<key>from</key>
+		<string>U+0400</string>
+		<key>to</key>
+		<string>U+04ff</string>
+	</dict>
+	<key>Armenian</key>
+	<dict>
+		<key>from</key>
+		<string>U+0530</string>
+		<key>to</key>
+		<string>U+058a</string>
+	</dict>
+	<key>Arabic</key>
+	<dict>
+		<key>from</key>
+		<string>U+0600</string>
+		<key>to</key>
+		<string>U+06ff</string>
+	</dict>
+	<key>Devanagari</key>
+	<dict>
+		<key>from</key>
+		<string>U+0900</string>
+		<key>to</key>
+		<string>U+097f</string>
+	</dict>
+	<key>Bengali</key>
+	<dict>
+		<key>from</key>
+		<string>U+0980</string>
+		<key>to</key>
+		<string>U+09ff</string>
+	</dict>
+	<key>Gurmukhi</key>
+	<dict>
+		<key>from</key>
+		<string>U+0a00</string>
+		<key>to</key>
+		<string>U+0a74</string>
+	</dict>
+	<key>Gujarati</key>
+	<dict>
+		<key>from</key>
+		<string>U+0a80</string>
+		<key>to</key>
+		<string>U+0ab9</string>
+	</dict>
+	<key>Oriya</key>
+	<dict>
+		<key>from</key>
+		<string>U+0b00</string>
+		<key>to</key>
+		<string>U+0b71</string>
+	</dict>
+	<key>Tamil</key>
+	<dict>
+		<key>from</key>
+		<string>U+0b80</string>
+		<key>to</key>
+		<string>U+0bff</string>
+	</dict>
+	<key>Telugu</key>
+	<dict>
+		<key>from</key>
+		<string>U+0c00</string>
+		<key>to</key>
+		<string>U+0c7f</string>
+	</dict>
+	<key>Kannada</key>
+	<dict>
+		<key>from</key>
+		<string>U+0c80</string>
+		<key>to</key>
+		<string>U+0cef</string>
+	</dict>
+	<key>Sinhala</key>
+	<dict>
+		<key>from</key>
+		<string>U+0d80</string>
+		<key>to</key>
+		<string>U+0ddf</string>
+	</dict>
+	<key>Thai</key>
+	<dict>
+		<key>from</key>
+		<string>U+0e00</string>
+		<key>to</key>
+		<string>U+0e5b</string>
+	</dict>
+	<key>Lao</key>
+	<dict>
+		<key>from</key>
+		<string>U+0e80</string>
+		<key>to</key>
+		<string>U+0edd</string>
+	</dict>
+	<key>Tibetan</key>
+	<dict>
+		<key>from</key>
+		<string>U+0f00</string>
+		<key>to</key>
+		<string>U+0fd8</string>
+	</dict>
+	<key>Georgian</key>
+	<dict>
+		<key>from</key>
+		<string>U+10a0</string>
+		<key>to</key>
+		<string>U+10f6</string>
+	</dict>
+	<key>Hangul Jamo</key>
+	<dict>
+		<key>from</key>
+		<string>U+1100</string>
+		<key>to</key>
+		<string>U+1112</string>
+	</dict>
+	<key>Cherokee</key>
+	<dict>
+		<key>from</key>
+		<string>U+13a0</string>
+		<key>to</key>
+		<string>U+13f4</string>
+	</dict>
+	<key>Unified Canadian Aboriginal Syllabics</key>
+	<dict>
+		<key>from</key>
+		<string>U+1400</string>
+		<key>to</key>
+		<string>U+1676</string>
+	</dict>
+	<key>Latin Extended Additional</key>
+	<dict>
+		<key>from</key>
+		<string>U+1e00</string>
+		<key>to</key>
+		<string>U+1ef9</string>
+	</dict>
+	<key>Greek Extended</key>
+	<dict>
+		<key>from</key>
+		<string>U+1f00</string>
+		<key>to</key>
+		<string>U+1fff</string>
+	</dict>
+	<key>General Punctuation</key>
+	<dict>
+		<key>from</key>
+		<string>U+2010</string>
+		<key>to</key>
+		<string>U+205e</string>
+	</dict>
+	<key>Superscripts and Subscripts</key>
+	<dict>
+		<key>from</key>
+		<string>U+2070</string>
+		<key>to</key>
+		<string>U+2094</string>
+	</dict>
+	<key>Currency Symbols</key>
+	<dict>
+		<key>from</key>
+		<string>U+20a0</string>
+		<key>to</key>
+		<string>U+20b5</string>
+	</dict>
+	<key>Letterlike Symbols</key>
+	<dict>
+		<key>from</key>
+		<string>U+2100</string>
+		<key>to</key>
+		<string>U+214f</string>
+	</dict>
+	<key>Number Forms</key>
+	<dict>
+		<key>from</key>
+		<string>U+2153</string>
+		<key>to</key>
+		<string>U+2184</string>
+	</dict>
+	<key>Arrows</key>
+	<dict>
+		<key>from</key>
+		<string>U+2190</string>
+		<key>to</key>
+		<string>U+21ea</string>
+	</dict>
+	<key>Mathematical Operators</key>
+	<dict>
+		<key>from</key>
+		<string>U+2200</string>
+		<key>to</key>
+		<string>U+22f1</string>
+	</dict>
+	<key>Miscellaneous Thchnical</key>
+	<dict>
+		<key>from</key>
+		<string>U+2300</string>
+		<key>to</key>
+		<string>U+237a</string>
+	</dict>
+	<key>Control Pictures</key>
+	<dict>
+		<key>from</key>
+		<string>U+2400</string>
+		<key>to</key>
+		<string>U+2424</string>
+	</dict>
+	<key>Optical Character Recognition</key>
+	<dict>
+		<key>from</key>
+		<string>U+2440</string>
+		<key>to</key>
+		<string>U+244a</string>
+	</dict>
+	<key>Enclosed Alphanumerics</key>
+	<dict>
+		<key>from</key>
+		<string>U+2460</string>
+		<key>to</key>
+		<string>U+24ea</string>
+	</dict>
+	<key>Box Drawing</key>
+	<dict>
+		<key>from</key>
+		<string>U+2500</string>
+		<key>to</key>
+		<string>U+257f</string>
+	</dict>
+	<key>Block Elements</key>
+	<dict>
+		<key>from</key>
+		<string>U+2580</string>
+		<key>to</key>
+		<string>U+2595</string>
+	</dict>
+	<key>Geometric Shapes</key>
+	<dict>
+		<key>from</key>
+		<string>U+25a0</string>
+		<key>to</key>
+		<string>U+25ff</string>
+	</dict>
+	<key>Miscellaneous Symbols</key>
+	<dict>
+		<key>from</key>
+		<string>U+2600</string>
+		<key>to</key>
+		<string>U+26b2</string>
+	</dict>
+	<key>Dingbats</key>
+	<dict>
+		<key>from</key>
+		<string>U+2700</string>
+		<key>to</key>
+		<string>U+27bf</string>
+	</dict>
+	<key>Braille Patterns</key>
+	<dict>
+		<key>from</key>
+		<string>U+2800</string>
+		<key>to</key>
+		<string>U+28ff</string>
+	</dict>
+	<key>Latin Extended-C</key>
+	<dict>
+		<key>from</key>
+		<string>U+2c60</string>
+		<key>to</key>
+		<string>U+2c6c</string>
+	</dict>
+	<key>Supplemental Punctuation</key>
+	<dict>
+		<key>from</key>
+		<string>U+2e00</string>
+		<key>to</key>
+		<string>U+2e17</string>
+	</dict>
+	<key>CJK Radicals Supplement</key>
+	<dict>
+		<key>from</key>
+		<string>U+2e80</string>
+		<key>to</key>
+		<string>U+2ef3</string>
+	</dict>
+	<key>Kangxi Radicals</key>
+	<dict>
+		<key>from</key>
+		<string>U+2f00</string>
+		<key>to</key>
+		<string>U+2fd5</string>
+	</dict>
+	<key>Ideographic Description Characters</key>
+	<dict>
+		<key>from</key>
+		<string>U+2ff0</string>
+		<key>to</key>
+		<string>U+2ffb</string>
+	</dict>
+	<key>CJK Symbols and Punctuation</key>
+	<dict>
+		<key>from</key>
+		<string>U+3000</string>
+		<key>to</key>
+		<string>U+303f</string>
+	</dict>
+	<key>Hiragana</key>
+	<dict>
+		<key>from</key>
+		<string>U+3040</string>
+		<key>to</key>
+		<string>U+309f</string>
+	</dict>
+	<key>Katakana</key>
+	<dict>
+		<key>from</key>
+		<string>U+30a0</string>
+		<key>to</key>
+		<string>U+30ff</string>
+	</dict>
+	<key>Bopomofo</key>
+	<dict>
+		<key>from</key>
+		<string>U+3105</string>
+		<key>to</key>
+		<string>U+3129</string>
+	</dict>
+	<key>Hangul Compatibility Jamo</key>
+	<dict>
+		<key>from</key>
+		<string>U+3130</string>
+		<key>to</key>
+		<string>U+318f</string>
+	</dict>
+	<key>Kanbun</key>
+	<dict>
+		<key>from</key>
+		<string>U+3190</string>
+		<key>to</key>
+		<string>U+319f</string>
+	</dict>
+	<key>Katakana Phonetic Extensions</key>
+	<dict>
+		<key>from</key>
+		<string>U+31f0</string>
+		<key>to</key>
+		<string>U+31ff</string>
+	</dict>
+	<key>Enclosed CJK Letters and Months</key>
+	<dict>
+		<key>from</key>
+		<string>U+3220</string>
+		<key>to</key>
+		<string>U+32ff</string>
+	</dict>
+	<key>CJK Compatibility</key>
+	<dict>
+		<key>from</key>
+		<string>U+3300</string>
+		<key>to</key>
+		<string>U+33da</string>
+	</dict>
+	<key>CJK Unified Ideographs Extension A</key>
+	<dict>
+		<key>from</key>
+		<string>U+3400</string>
+		<key>to</key>
+		<string>U+4dbf</string>
+	</dict>
+	<key>CJK Unified Ideographs</key>
+	<dict>
+		<key>from</key>
+		<string>U+4e00</string>
+		<key>to</key>
+		<string>U+9fff</string>
+	</dict>
+	<key>Yi Syllables</key>
+	<dict>
+		<key>from</key>
+		<string>U+a000</string>
+		<key>to</key>
+		<string>U+a48f</string>
+	</dict>
+	<key>Yi Radicals</key>
+	<dict>
+		<key>from</key>
+		<string>U+a490</string>
+		<key>to</key>
+		<string>U+a4c4</string>
+	</dict>
+	<key>Modifier Tone Letters</key>
+	<dict>
+		<key>from</key>
+		<string>U+a700</string>
+		<key>to</key>
+		<string>U+a71a</string>
+	</dict>
+	<key>Hangul Syllables</key>
+	<dict>
+		<key>from</key>
+		<string>U+ac00</string>
+		<key>to</key>
+		<string>U+d7af</string>
+	</dict>
+	<key>CJK Compatibility ldegraphs</key>
+	<dict>
+		<key>from</key>
+		<string>U+f900</string>
+		<key>to</key>
+		<string>U+fa6a</string>
+	</dict>
+	<key>Alphabetic Presentation Forms</key>
+	<dict>
+		<key>from</key>
+		<string>U+fb00</string>
+		<key>to</key>
+		<string>U+fb04</string>
+	</dict>
+	<key>Arabic Presentation Forms-A</key>
+	<dict>
+		<key>from</key>
+		<string>U+fb50</string>
+		<key>to</key>
+		<string>U+fdc7</string>
+	</dict>
+	<key>CJK Compatibility Forms</key>
+	<dict>
+		<key>from</key>
+		<string>U+fe30</string>
+		<key>to</key>
+		<string>U+fe4f</string>
+	</dict>
+	<key>Small Form Variants</key>
+	<dict>
+		<key>from</key>
+		<string>U+fe50</string>
+		<key>to</key>
+		<string>U+fe6b</string>
+	</dict>
+	<key>Arabic Presentation Forms-B</key>
+	<dict>
+		<key>from</key>
+		<string>U+fe70</string>
+		<key>to</key>
+		<string>U+fefc</string>
+	</dict>
+	<key>Halfwidth and Fullwidth Forms</key>
+	<dict>
+		<key>from</key>
+		<string>U+ff00</string>
+		<key>to</key>
+		<string>U+ff9f</string>
+	</dict>
+</dict>
+</plist>
