@@ -7,7 +7,7 @@
 */
 "Families" = "Families";
 "Custom Font" = "Custom Font";
-"ColorEmoji" = "Color Emoji";
+"ColorEmoji" = "Color Symbols";
 "Styles" = "Styles";
 "Font Preview" = "Font Preview";
 "Settings" = "Settings";
@@ -19,7 +19,7 @@
 "Version" = "Version";
 "GroupSMSCondition" = "Group SMS requires to disable iMessage, Goup Message & MMS in \"Setting\" App.";
 "Cancel" = "Cancel";
-"invite" = "Hello,'Color Emoji'is a great app and easy to use,check out it on the App Store,I think you'll like it! itms://itunes.apple.com/us/app/color-emoji-unicode-symbol-character-text/id657401562?mt=8";
+"invite" = "Hello,'Color Symbols'is a great app and easy to use,check out it on the App Store,I think you'll like it! itms://itunes.apple.com/us/app/color-emoji-unicode-symbol-character-text/id657401562?mt=8";
 "No mail account" = "There are no mail accouts configured, You can add or creat a mail account in Settings";
 "group member" = "Members";
 "ok" = "OK";
@@ -35,3 +35,18 @@
 "Emoj" = "Emoji";
 "Copied" = "Copied";
 "group" = "Group";
+"Language" = "Language";
+"SMS"= "SMS";
+"Email" = "Email";
+"Text" = "Text";
+"Copy" = "Copy";
+"Clear history" = "Clear history";
+"No mail notice" = "No Mail accout";
+"No facebook notice" = "No Facebook accout";
+"No twitter notice" = "No Twitter accout";
+"No Sina notice" = "No Sian Weibo accout";
+"No mail account" = "There are no mail accouts configured, You can add or creat a mail account in Settings";
+"No facebook account" = "There are no Facebook accouts configured, You can add or creat a Facebook account in Settings";
+"No twitter account" = "There are no Twitter accouts configured, You can add or creat a Twitter account in Settings";
+"No Sina account" = "There are no Sina Weibo accouts configured, You can add or creat a Sina account in Settings";
+"Device not support" = "Your device is not support to share diary!";

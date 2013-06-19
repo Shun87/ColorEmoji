@@ -11,19 +11,32 @@
 #import "UIColor+HexColor.h"
 #import "AppDelegate.h"
 #import "ProVersionViewController.h"
-
+#import "FamilyViewController.h"
+#import "FontViewController.h"
 @interface FontPreviewController ()
 
 @end
 
 @implementation FontPreviewController
 @synthesize textView1;
-@synthesize fontName;
+@synthesize fontName, toolbar, symbolKeyboard, systemKeyButton, symbolKeyButton, fontKeyButton;
+@synthesize aSlider;
+@synthesize historySymbolKeyboard, emojiKeyButton, emojiSymbolKeyboard;
 
 - (void)dealloc
 {
+    [aSlider release];
     [textView1 release];
     [fontName release];
+    [toolbar release];
+    [systemKeyButton release];
+    [symbolKeyButton release];
+    [fontKeyButton release];
+    [emojiKeyButton release];
+    [emojiSymbolKeyboard release];
+    [symbolKeyboard release];
+    [historySymbolKeyboard release];
+    [social release];
     [super dealloc];
 }
 
@@ -32,7 +45,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
+        self.title = NSLocalizedString(@"Text", @"Text");
+        self.tabBarItem.image = [UIImage imageNamed:@"Language.png"];
     }
     return self;
 }
@@ -40,36 +54,34 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    systemKeyButton.title = @"\u2328";
+    symbolKeyButton.title = @"\u25d1";
+    fontKeyButton.title = @"\u270e";
+    emojiKeyButton.title = @"\u263b";
+    NSDictionary *dic = [NSDictionary dictionaryWithObject:[UIFont systemFontOfSize:23] forKey:UITextAttributeFont];
+    [symbolKeyButton setTitleTextAttributes:dic forState:UIControlStateNormal];
+    [systemKeyButton setTitleTextAttributes:dic forState:UIControlStateNormal];
+    [fontKeyButton setTitleTextAttributes:dic forState:UIControlStateNormal];
+        [emojiKeyButton setTitleTextAttributes:dic forState:UIControlStateNormal];
     
     textView1.layer.cornerRadius = 8;
     textView1.layer.masksToBounds = YES;
-    self.navigationItem.title = NSLocalizedString(@"Font Preview", nil);
     
     self.view.backgroundColor = [UIColor colorFromHex:TableViewBKColor];
     textView1.backgroundColor = [UIColor whiteColor];
-    textView1.font = [UIFont fontWithName:fontName size:20];
+    textView1.font = [UIFont systemFontOfSize:18];
+    aSlider.value = 18;
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setImage:[UIImage imageNamed:@"close.png"] forState:UIControlStateNormal];
-    [button setFrame:CGRectMake(0, 0, 40, 40)];
-    button.showsTouchWhenHighlighted = YES;
-    [button addTarget:self
-               action:@selector(goBack:) forControlEvents:UIControlEventTouchUpInside];
+    [self.toolbar setBarStyle:UIBarStyleBlack];
     
-    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-    self.navigationItem.leftBarButtonItem = leftItem;
-    [leftItem release];
+    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareAction:)];
+    UIBarButtonItem *clearButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(clearAction:)];
+    self.navigationItem.rightBarButtonItems = @[shareButton, clearButton];
+    [shareButton release];
+    [clearButton release];
     
-    button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setImage:[UIImage imageNamed:@"check.png"] forState:UIControlStateNormal];
-    [button setFrame:CGRectMake(0, 0, 40, 40)];
-    button.showsTouchWhenHighlighted = YES;
-    [button addTarget:self
-               action:@selector(showProVersion:) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-    self.navigationItem.rightBarButtonItem = rightItem;
-    [rightItem release];
-   
+    social = [[TTSocial alloc] init];
+    social.viewController = self;
 
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShow:)
@@ -79,38 +91,63 @@
                                              selector:@selector(keyboardWillHide:)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reloadFont:)
+                                                 name:@"changeFont"
+                                               object:nil];
     
-    CGRect accesoryViewRect = CGRectMake(0, 0, 320, 30);
-    UIView *accessoryView = [[UIView alloc]initWithFrame:accesoryViewRect];
-    accessoryView.backgroundColor = [UIColor clearColor];
     
-    CGRect buttonRect = CGRectMake(320 - 58, 0, 55, 30);
-    UIButton *hideButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [hideButton setFrame:buttonRect];
-    [hideButton setImage:[UIImage imageNamed:@"hideKey"] forState:UIControlStateNormal];
-    [hideButton addTarget:self action:@selector(hideKey:) forControlEvents:UIControlEventTouchUpInside];
-    [accessoryView addSubview:hideButton];
-    textView1.inputAccessoryView = accessoryView;
-    [accessoryView release];
+    self.symbolKeyboard = [[[SymbolView alloc] init] autorelease];
+    self.symbolKeyboard.delegate = self;
+    [self.symbolKeyboard setSymbolShowType:ST_Symbol];
+    textView1.inputAccessoryView = toolbar;
+    
+    self.historySymbolKeyboard = [[[SymbolView alloc] init] autorelease];
+    [self.historySymbolKeyboard setSymbolShowType:ST_History];
+    self.historySymbolKeyboard.delegate = self;
+    
+    self.emojiSymbolKeyboard = [[[SymbolView alloc] init] autorelease];
+    [self.emojiSymbolKeyboard setSymbolShowType:ST_Emoji];
+    self.emojiSymbolKeyboard.delegate = self;
+    
+    textView1.inputView = self.symbolKeyboard;
+    [self performSelector:@selector(beganEding) withObject:nil afterDelay:0.35];
+}
+
+
+- (void)reloadFont:(NSNotification *)notificaiton
+{
+    self.fontName = (NSString *)[notificaiton object];
+    textView1.font = [UIFont fontWithName:self.fontName size:aSlider.value];
+}
+
+- (IBAction)shareAction:(id)sender
+{
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                              delegate:self
+                                     cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
+                                destructiveButtonTitle:nil
+                                     otherButtonTitles:NSLocalizedString(@"SMS", nil),
+                                  NSLocalizedString(@"Email", nil),
+                                  NSLocalizedString(@"Facebook", nil),
+                                  NSLocalizedString(@"Twitter", nil),
+                                  NSLocalizedString(@"Copy", nil),
+                                 NSLocalizedString(@"Clear history", nil),
+                                  nil];
+    actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+    actionSheet.delegate = self;
+	[actionSheet showFromTabBar:self.tabBarController.tabBar];
+    [actionSheet release];
+}
+
+- (IBAction)clearAction:(id)sender
+{
+     textView1.text = nil;
 }
 
 - (IBAction)showProVersion:(id)sender
 {
-    NSData *data = [textView1.text dataUsingEncoding:NSUTF16LittleEndianStringEncoding];
-    int nLen = [data length];
-    for (int i=0; i<nLen; i+=2)
-    {
-        NSRange range;
-        range.location = i;
-        range.length = 2;
-        char buffer[2];
-        [data getBytes:buffer range:range];
-        
-        ushort hexValue = *(ushort *)buffer;
-        NSString *hexStr = [NSString stringWithFormat:@"%04x", hexValue];
-        NSString *unicode = [NSString stringWithFormat:@"U+%@", hexStr];
-        NSLog(@"%@", unicode);
-    }
+    textView1.text = nil;
 //    ProVersionViewController*proViewController = [[ProVersionViewController alloc] initWithNibName:@"ProVersionViewController" bundle:nil];
 //    [self.navigationController pushViewController:proViewController animated:YES];
 //    [proViewController release];
@@ -119,12 +156,133 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    oldRect = textView1.frame;
     
+#if FreeApp    
+    AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    if (app.adBanner.superview != nil)
+    {
+        [app.adBanner removeFromSuperview];
+    }
+    
+    CGRect rect = app.adBanner.frame;
+    rect.origin.y = 0;
+    app.adBanner.frame = rect;
+    app.adBanner.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
+    [self.view addSubview:app.adBanner];
+    
+    
+#endif
+
+}
+
+- (void)beganEding
+{
+    [textView1 becomeFirstResponder];
+}
+
+- (IBAction)symbolKeyboard:(id)sender
+{
+    textView1.inputView = self.symbolKeyboard;
+    [textView1 reloadInputViews];
+}
+
+- (IBAction)systemKeyboard:(id)sender
+{
+    textView1.inputView = nil;
+    [textView1 reloadInputViews];
+}
+
+- (IBAction)historyKeyboard:(id)sender
+{
+    [self.historySymbolKeyboard setSymbolShowType:ST_History];
+    textView1.inputView = self.historySymbolKeyboard;
+    [textView1 reloadInputViews];
+}
+
+- (IBAction)emojiKeyboard:(id)sender
+{
+    textView1.inputView = self.emojiSymbolKeyboard;
+    [textView1 reloadInputViews];
+}
+
+- (IBAction)hideKeyboard:(id)sender
+{
+    [textView1 resignFirstResponder];
+}
+
+
+- (void)deleteBackwardString
+{
+    [textView1 deleteBackward];
+}
+
+
+- (IBAction)changeFont:(id)sender
+{
+    FontViewController *viewController1 = [[[FontViewController alloc] initWithNibName:@"FontViewController" bundle:nil] autorelease];
+    [self.navigationController pushViewController:viewController1 animated:YES];
+}
+
+- (IBAction)changeFontSize:(id)sender
+{
+    UISlider *slider = (UISlider *)sender;
+    if (self.fontName != nil)
+    {
+        textView1.font = [UIFont fontWithName:self.fontName size:slider.value];
+    }
+    else
+    {
+        textView1.font = [UIFont systemFontOfSize:slider.value];
+    }
 }
 
 - (IBAction)hideKey:(id)sender
 {
     [textView1 resignFirstResponder];
+}
+
+- (IBAction)historySymbol:(id)sender
+{
+    
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        [social showSMSPicker:textView1.text phones:nil];
+    }
+    else if (buttonIndex == 1)
+    {
+        [social showMailPicker:textView1.text to:nil cc:nil bcc:nil images:nil];
+    }
+    else if (buttonIndex == 2)
+    {
+        [textView1 resignFirstResponder];
+        [social showFaceBook:textView1.text];
+        
+    }
+    else if (buttonIndex == 3)
+    {
+        [textView1 resignFirstResponder];
+        [social showTwitter:textView1.text];
+    }
+    else if (buttonIndex == 4)
+    {
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        pasteboard.string = textView1.text;
+    }
+    else if (buttonIndex == 5)
+    {
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *path = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"History.plist"];
+        BOOL exist = [[NSFileManager defaultManager] fileExistsAtPath:path];
+        if (exist)
+        {
+            [[NSFileManager defaultManager] removeItemAtPath:path error:nil];
+        }
+    }
 }
 
 - (void)keyboardWillShow:(NSNotification *)aNotification
@@ -134,8 +292,7 @@
     CGRect keyboardRect = [[[aNotification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     CGRect convRect = [window convertRect:keyboardRect toView:self.view];
-    
-    oldRect = self.textView1.frame;
+
     [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
     [UIView setAnimationDuration:animationDuration];
     CGRect textViewRect = self.textView1.frame;
@@ -155,15 +312,15 @@
     [UIView commitAnimations];
 }
 
-
-- (IBAction)changeFont:(id)sender
+- (IBAction)goBack:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)goBack:(id)sender
+- (void)selectSymbol:(NSString *)text
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    NSString *filledText = textView1.text;
+    textView1.text = [filledText stringByAppendingFormat:@"%@", text];
 }
 
 - (void)didReceiveMemoryWarning

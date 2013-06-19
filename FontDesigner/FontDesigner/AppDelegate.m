@@ -16,8 +16,8 @@
 #include "SymbolListViewController.h"
 #import "SymbolsViewController.h"
 #import "SpecialSymbolController.h"
-#import "iRate.h"
 #import "Flurry.h"
+#import "FontPreviewController.h"
 
 @implementation AppDelegate
 @synthesize systemFontFamily;
@@ -28,7 +28,9 @@
 #endif
 - (void)dealloc
 {
+#if FreeApp
     [adBanner release];
+#endif
     [systemFontFamily release];
     [_window release];
     [_tabBarController release];
@@ -59,6 +61,8 @@
     emoji.tabBarItem.image = [UIImage imageNamed:@"emoji.png"];
     emoji.unicodeType = Emoji;
     
+    FontPreviewController *previewController = [[[FontPreviewController alloc] initWithNibName:@"FontPreviewController" bundle:nil] autorelease];
+    UINavigationController *previewControllerNav = [[[UINavigationController alloc] initWithRootViewController:previewController] autorelease];//    FamilyViewController *familyController = [[FamilyViewController alloc] initWithNibName:@"familyController" bundle:nil];
     
     SpecialSymbolController *specialSymbol = [[SpecialSymbolController alloc] initWithNibName:@"SpecialSymbolController" bundle:nil];
     
@@ -71,7 +75,7 @@
     UINavigationController *settingNav = [[[UINavigationController alloc] initWithRootViewController:viewController4] autorelease];
     
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];
-    self.tabBarController.viewControllers = [NSArray arrayWithObjects:sysmbolNav,specialSymbolNav, emojiNav, settingNav, nil];
+    self.tabBarController.viewControllers = [NSArray arrayWithObjects:previewControllerNav, sysmbolNav, settingNav, nil];
     self.window.rootViewController = self.tabBarController;
 
 #if FreeApp
@@ -98,9 +102,7 @@
     [[UINavigationBar appearance] setTintColor:[UIColor colorFromHex:YellowNavigationBar]];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque];
     
-    [iRate sharedInstance].onlyPromptIfLatestVersion = NO;
-    [iRate sharedInstance].daysUntilPrompt = 1.5;
-   // [Flurry startSession:@"BM4D8CXT5SMRMNP6XKNQ"];
+    [Flurry startSession:@"GG7YXCMHS464TJ9SMVDC"];
  
     return YES;
 }
@@ -111,6 +113,7 @@
 // generating invalid impressions and clicks.
 - (GADRequest *)createRequest {
     GADRequest *request = [GADRequest request];
+    //request.testDevices = @[GAD_SIMULATOR_ID];
     return request;
 }
 

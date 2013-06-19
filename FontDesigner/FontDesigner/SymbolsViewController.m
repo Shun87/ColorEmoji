@@ -61,7 +61,9 @@
             NSData *data = [NSData dataWithBytes:&hex length:sizeof(ushort)];
             NSString *symbolStr = [[NSString alloc] initWithData:data
                                                         encoding:NSUTF16LittleEndianStringEncoding];
+ 
             [symbolArray addObject:symbolStr];
+            
         }
         
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -175,7 +177,7 @@
         symbolDetailView.backgroundColor = [UIColor blackColor];
         symbolDetailView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.85];
         
-        UILabel *taillabel = [[[UILabel alloc] initWithFrame:CGRectMake(0, symbolDetailView.frame.size.height - 200, symbolDetailView.frame.size.width, 60)]autorelease];
+        UILabel *taillabel = [[[UILabel alloc] initWithFrame:CGRectMake(0, symbolDetailView.frame.size.height - 200, symbolDetailView.frame.size.width, 100)]autorelease];
         taillabel.textAlignment =  UITextAlignmentCenter;
         taillabel.textColor = [UIColor darkGrayColor];
         taillabel.text = label.text;

@@ -40,6 +40,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorFromHex:LightGray];
     self.mTableView.backgroundView = nil;
+    self.mTableView.backgroundColor = [UIColor clearColor];
     self.mTableView.separatorColor = [UIColor colorFromHex:SeperatorColor];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];

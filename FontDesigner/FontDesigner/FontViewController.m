@@ -1,27 +1,25 @@
 //
-//  FamilyDetailViewController.m
-//  FontDesigner
+//  FontViewController.m
+//  TextFont
 //
-//  Created by chenshun on 13-5-5.
+//  Created by chenshun on 13-6-15.
 //  Copyright (c) 2013年 ChenShun. All rights reserved.
 //
 
-#import "FamilyDetailViewController.h"
+#import "FontViewController.h"
 #import "UIColor+HexColor.h"
-#import "FontPreviewController.h"
-#import "AppDelegate.h"
 
-@interface FamilyDetailViewController ()
+@interface FontViewController ()
 
 @end
 
-@implementation FamilyDetailViewController
-@synthesize mTableView, familyName, sourceArray;
+@implementation FontViewController
+@synthesize mTableView, sourceArray, language;
 - (void)dealloc
 {
     [mTableView release];
     [sourceArray release];
-    [familyName release];
+    [language release];
     [super dealloc];
 }
 
@@ -30,6 +28,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         sourceArray = [[NSMutableArray alloc] init];
+        [sourceArray addObjectsFromArray:[UIFont familyNames]];
+        self.navigationItem.title = NSLocalizedString(@"Text", nil);
     }
     return self;
 }
@@ -37,8 +37,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
+    self.view.backgroundColor = [UIColor colorFromHex:TableViewBKColor];
     self.mTableView.backgroundView = nil;
     self.mTableView.backgroundColor = [UIColor colorFromHex:TableViewBKColor];
     self.mTableView.separatorColor = [UIColor colorFromHex:SeperatorColor];
@@ -51,26 +50,12 @@
                action:@selector(goBack:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.leftBarButtonItem = leftItem;
-    
-    self.navigationItem.title = familyName;
+    self.navigationItem.title = language;
 }
 
 - (IBAction)goBack:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    [sourceArray sortUsingComparator: ^NSComparisonResult(id obj1, id obj2){
-        
-        NSString *objStr1 = (NSString *)obj1;
-        NSString *objStr2 = (NSString *)obj2;
-        return [objStr1 compare:objStr2];
-    }];
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -81,17 +66,19 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return [sourceArray count];;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return nil;
+     NSString *family = [sourceArray objectAtIndex:section];
+    return family;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [sourceArray count];
+    NSString *family = [sourceArray objectAtIndex:section];
+    return [[UIFont fontNamesForFamilyName:family] count];
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -108,11 +95,12 @@
         
     }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    NSString *fontName = [sourceArray objectAtIndex:[indexPath row]];
-    
+    NSString *family = [sourceArray objectAtIndex:[indexPath section]];
+    NSArray *array = [UIFont fontNamesForFamilyName:family];
+    NSString *fontName = [array objectAtIndex:[indexPath row]];
     cell.textLabel.font = [UIFont fontWithName:fontName size:16];
     cell.textLabel.backgroundColor = [UIColor clearColor];
-    cell.textLabel.text = [sourceArray objectAtIndex:[indexPath row]];
+    cell.textLabel.text = fontName;
     
     return cell;
 }
@@ -120,12 +108,23 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    FontPreviewController *fontPreviewController = [[FontPreviewController alloc] initWithNibName:@"FontPreviewController" bundle:nil];
-    fontPreviewController.fontName = [sourceArray objectAtIndex:[indexPath row]];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:fontPreviewController];
-    
-    [self presentViewController:navigationController animated:YES completion:nil];
+    NSString *family = [sourceArray objectAtIndex:[indexPath section]];
+    NSArray *array = [UIFont fontNamesForFamilyName:family];
+    NSString *fontName = [array objectAtIndex:[indexPath row]];
+    [UIView transitionWithView:self.view
+                      duration:0.65
+                       options:UIViewAnimationOptionTransitionCurlUp
+                    animations:nil
+                    completion:^(BOOL complete){
+                        
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"changeFont" object:fontName];
+                        UINavigationController *nav = [self.tabBarController.viewControllers objectAtIndex:0];
+                        [nav popToRootViewControllerAnimated:YES];
+                        [self.tabBarController setSelectedIndex:0];
+                        [self.navigationController popToRootViewControllerAnimated:NO];
+                        
+                    }];
+
 }
 
 @end
