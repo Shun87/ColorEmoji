@@ -12,7 +12,8 @@ typedef enum
 {
     ST_Symbol,
     ST_Emoji,
-    ST_History
+    ST_History,
+    ST_Custom
 }SymbolType;
 @protocol SymbolViewDelegate;
 @interface SymbolView : UIView <UIScrollViewDelegate>
@@ -28,6 +29,7 @@ typedef enum
 @property (nonatomic, assign)id<SymbolViewDelegate> delegate;
 
 - (void)setSymbolShowType:(SymbolType)aType;
+- (void)addSymbols:(NSArray *)symbols;
 @end
 @protocol SymbolViewDelegate <NSObject>
 

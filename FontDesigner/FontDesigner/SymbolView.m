@@ -12,6 +12,7 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "SymbolUnits.h"
 #import <QuartzCore/QuartzCore.h>
+
 @implementation UIScrollView(Overide)
 // called before scrolling begins if touches have already been delivered to a subview of the scroll view. if it returns NO the touches will continue to be delivered to the subview and scrolling will not occur
 // not called if canCancelContentTouches is NO. default returns YES if view isn't a UIControl
@@ -62,6 +63,12 @@
     {
         [self addSegment];
     }
+}
+
+- (void)addSymbols:(NSArray *)symbols
+{
+    [symbolList addObjectsFromArray:symbols];
+    [self resizeContent:0];
 }
 
 - (void)loadLocalSymbols

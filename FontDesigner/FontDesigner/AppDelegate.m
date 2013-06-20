@@ -7,15 +7,10 @@
 //
 
 #import "AppDelegate.h"
-
-#import "FamilyViewController.h"
-
 #import "SettingViewController.h"
 #import "UIColor+HexColor.h"
-#import "StyleViewController.h"
 #include "SymbolListViewController.h"
 #import "SymbolsViewController.h"
-#import "SpecialSymbolController.h"
 #import "Flurry.h"
 #import "FontPreviewController.h"
 
@@ -63,15 +58,11 @@
     
     FontPreviewController *previewController = [[[FontPreviewController alloc] initWithNibName:@"FontPreviewController" bundle:nil] autorelease];
     UINavigationController *previewControllerNav = [[[UINavigationController alloc] initWithRootViewController:previewController] autorelease];//    FamilyViewController *familyController = [[FamilyViewController alloc] initWithNibName:@"familyController" bundle:nil];
-    
-    SpecialSymbolController *specialSymbol = [[SpecialSymbolController alloc] initWithNibName:@"SpecialSymbolController" bundle:nil];
-    
     SettingViewController *viewController4 = [[[SettingViewController alloc] initWithNibName:@"SettingViewController" bundle:nil] autorelease];
     
     UINavigationController *sysmbolNav = [[[UINavigationController alloc] initWithRootViewController:sysmbolNameViewController] autorelease];
     
     UINavigationController *emojiNav = [[[UINavigationController alloc] initWithRootViewController:emoji] autorelease];
-    UINavigationController *specialSymbolNav = [[[UINavigationController alloc] initWithRootViewController:specialSymbol] autorelease];
     UINavigationController *settingNav = [[[UINavigationController alloc] initWithRootViewController:viewController4] autorelease];
     
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];

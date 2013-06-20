@@ -10,7 +10,7 @@
 #import "SymbolView.h"
 #import "TTSocial.h"
 
-@interface FontPreviewController : UIViewController<SymbolViewDelegate, UIActionSheetDelegate>
+@interface FontPreviewController : UIViewController<SymbolViewDelegate, UIActionSheetDelegate, UITextViewDelegate>
 {
     UITextView *textView1;
     CGRect oldRect;
@@ -23,14 +23,19 @@
     UIBarButtonItem *symbolKeyButton;
     UIBarButtonItem *fontKeyButton;
     UIBarButtonItem *emojiKeyButton;
+    UIBarButtonItem *deleteKeyButton;
+    UIBarButtonItem *shareButton;
+    UIBarButtonItem *doneButton;
     TTSocial *social;
     UISlider *aSlider;
 }
+@property (nonatomic, retain)IBOutlet UIBarButtonItem *doneButton;
 @property (nonatomic, retain)IBOutlet UISlider *aSlider;
 @property (nonatomic, retain)IBOutlet UIBarButtonItem *fontKeyButton;
 @property (nonatomic, retain)IBOutlet UIBarButtonItem *symbolKeyButton;
 @property (nonatomic, retain)IBOutlet UIBarButtonItem *systemKeyButton;
 @property (nonatomic, retain)IBOutlet UIBarButtonItem *emojiKeyButton;
+@property (nonatomic, retain)IBOutlet UIBarButtonItem *deleteKeyButton;
 @property (nonatomic, retain)SymbolView *symbolKeyboard;
 @property (nonatomic, retain)SymbolView *historySymbolKeyboard;
 @property (nonatomic, retain)SymbolView *emojiSymbolKeyboard;
@@ -43,6 +48,6 @@
 - (IBAction)hideKeyboard:(id)sender;
 - (IBAction)changeFont:(id)sender;
 - (IBAction)historySymbol:(id)sender;
-
+- (IBAction)deleteBackwardString:(id)sender;
 - (IBAction)changeFontSize:(id)sender;
 @end

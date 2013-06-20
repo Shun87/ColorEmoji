@@ -47,7 +47,7 @@
     [super viewDidLoad];
     self.cellNib = [UINib nibWithNibName:@"SymbolsCell" bundle:nil];
     self.mTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
+    self.mTableView.rowHeight = 50;
     
     if (unicodeType == Symbol)
     {
@@ -56,7 +56,7 @@
         uint minHex = (uint)strtol([minUnicode UTF8String], 0, 16);
         uint maxHex = (uint)strtol([maxUnicode UTF8String], 0, 16);
         
-        for (uint hex = minHex; hex<maxHex; hex++)
+        for (uint hex = minHex; hex<=maxHex; hex++)
         {
             NSData *data = [NSData dataWithBytes:&hex length:sizeof(ushort)];
             NSString *symbolStr = [[NSString alloc] initWithData:data
@@ -171,6 +171,11 @@
 - (IBAction)symbolClicked:(id)sender
 {
     UILabel *label = (UILabel *)sender;
+    if ([label.text length] == 0)
+    {
+        return;
+    }
+    
     if (symbolDetailView == nil)
     {
         symbolDetailView = [[UIView alloc] initWithFrame:self.mTableView.frame];
@@ -232,7 +237,6 @@
         ushort hexValue = *(ushort *)buffer;
         NSString *hexStr = [NSString stringWithFormat:@"%04x", hexValue];
         unicode = [NSString stringWithFormat:@"U+%@", hexStr];
-
     }
     else if (nLen == 4)
     {
@@ -291,7 +295,7 @@
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    [cell setFontSize:28];
+    [cell setFontSize:24];
     NSInteger row = [indexPath row];
     NSMutableArray *array = [NSMutableArray array];
     for (int i=row*8; i<row*8+8; i++)

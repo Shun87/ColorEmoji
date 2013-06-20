@@ -11,7 +11,6 @@
 #import "UIColor+HexColor.h"
 #import "AppDelegate.h"
 #import "ProVersionViewController.h"
-#import "FamilyViewController.h"
 #import "FontViewController.h"
 @interface FontPreviewController ()
 
@@ -21,7 +20,7 @@
 @synthesize textView1;
 @synthesize fontName, toolbar, symbolKeyboard, systemKeyButton, symbolKeyButton, fontKeyButton;
 @synthesize aSlider;
-@synthesize historySymbolKeyboard, emojiKeyButton, emojiSymbolKeyboard;
+@synthesize historySymbolKeyboard, emojiKeyButton, emojiSymbolKeyboard, deleteKeyButton, doneButton;
 
 - (void)dealloc
 {
@@ -37,6 +36,9 @@
     [symbolKeyboard release];
     [historySymbolKeyboard release];
     [social release];
+    [deleteKeyButton release];
+    [shareButton release];
+    [doneButton release];
     [super dealloc];
 }
 
@@ -58,15 +60,18 @@
     symbolKeyButton.title = @"\u25d1";
     fontKeyButton.title = @"\u270e";
     emojiKeyButton.title = @"\u263b";
+    deleteKeyButton.title = @"\u232b";
+    
     NSDictionary *dic = [NSDictionary dictionaryWithObject:[UIFont systemFontOfSize:23] forKey:UITextAttributeFont];
     [symbolKeyButton setTitleTextAttributes:dic forState:UIControlStateNormal];
     [systemKeyButton setTitleTextAttributes:dic forState:UIControlStateNormal];
     [fontKeyButton setTitleTextAttributes:dic forState:UIControlStateNormal];
-        [emojiKeyButton setTitleTextAttributes:dic forState:UIControlStateNormal];
+    [emojiKeyButton setTitleTextAttributes:dic forState:UIControlStateNormal];
+    [deleteKeyButton setTitleTextAttributes:dic forState:UIControlStateNormal];
     
     textView1.layer.cornerRadius = 8;
     textView1.layer.masksToBounds = YES;
-    
+    textView1.delegate = self;
     self.view.backgroundColor = [UIColor colorFromHex:TableViewBKColor];
     textView1.backgroundColor = [UIColor whiteColor];
     textView1.font = [UIFont systemFontOfSize:18];
@@ -74,10 +79,10 @@
     
     [self.toolbar setBarStyle:UIBarStyleBlack];
     
-    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareAction:)];
+    shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareAction:)];
     UIBarButtonItem *clearButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(clearAction:)];
-    self.navigationItem.rightBarButtonItems = @[shareButton, clearButton];
-    [shareButton release];
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:doneButton, shareButton, nil];
+    self.navigationItem.leftBarButtonItem = clearButton;
     [clearButton release];
     
     social = [[TTSocial alloc] init];
@@ -212,7 +217,7 @@
 }
 
 
-- (void)deleteBackwardString
+- (IBAction)deleteBackwardString:(id)sender
 {
     [textView1 deleteBackward];
 }
@@ -282,6 +287,8 @@
         {
             [[NSFileManager defaultManager] removeItemAtPath:path error:nil];
         }
+        
+        [self.historySymbolKeyboard setSymbolShowType:ST_History];
     }
 }
 

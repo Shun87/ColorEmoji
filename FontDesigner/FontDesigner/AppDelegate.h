@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#define FreeApp 1
+#define FreeApp 0
 #if FreeApp
 #import "GADBannerView.h"
 #endif

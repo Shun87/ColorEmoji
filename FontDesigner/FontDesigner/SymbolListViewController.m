@@ -9,7 +9,6 @@
 #import "SymbolListViewController.h"
 #import "UIColor+HexColor.h"
 #import "SymbolDesc.h"
-#import "NSString+Transform.h"
 #import "SymbolsViewController.h"
 #import "AppDelegate.h"
 
